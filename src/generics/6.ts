@@ -1,4 +1,4 @@
-// У вас є тип Form, який містить інформацію про форму, включаючи поле errors. Ви хочете створити новий тип Params, який включає всі поля з Form, крім errors.
+// У вас є тип Form, який містить інформацію про форму, включаючи поле errors. Ви хочете створити новий тип Params, який включає всі поля з Form, крім errors.6.ts - відсутнє використання Omit
 type Errors = {
     email?: string[];
     firstName?: string[];
@@ -14,11 +14,11 @@ type Errors = {
     errors: Errors;
   };
   
-//   // Реалізуйте Params так, 
+//   // Реалізуйте Params так
 //   // щоб унеможливити поле 'errors' з типу Form
-  type Params = Pick <Form, 'email' | 'firstName' | 'lastName'| 'phone'>;
+  type Params = Omit <Form, 'errors'>;
 
-  let Params : Params = {
+  let params : Params = {
     firstName: 'Anastasiia',
     lastName: 'Occhiminuti',
     phone: '07',
